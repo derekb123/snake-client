@@ -31,6 +31,18 @@ const right = (key) => {
   }
 }
 
+const wassa = (key) => {
+  if (key === 'q') {
+    myconnection.write("Say: Wassaaa");
+  }
+}
+
+const tread = (key) => {
+  if (key === 'e') {
+    myconnection.write("Say: Don't tread on me");
+  }
+}
+
 /**
  * Setup User Interface 
  * Specifically, so that we can handle user input via stdin
@@ -51,6 +63,9 @@ const setupInput = function(conn) {
   stdin.on('data', down);
   stdin.on('data', left);
   stdin.on('data', right);
+
+  stdin.on('data', wassa);
+  stdin.on('data', tread);
 
   return stdin;
 }
